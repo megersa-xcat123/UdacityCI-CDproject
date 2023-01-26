@@ -1,4 +1,10 @@
----
-- name: setup the environment
+# exercise for setting up a webserver
+- name: Exercise for setting up a webserver apache
   hosts: all
+  user: ubuntu
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+   - setup
   
