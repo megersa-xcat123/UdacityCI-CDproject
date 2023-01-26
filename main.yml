@@ -1,5 +1,5 @@
 ---
 - name: my ansible
-  hosts: localhost
+  hosts: all
   roles:
-    - print
+    - setup
