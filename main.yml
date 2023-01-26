@@ -1,6 +1,6 @@
 #  exercise for setting up a webserver
 - name: Exercise for setting up a webserver apache
-  hosts: all
+  hosts: 54.237.207.101
   user: ubuntu
   become: true
   become_method: sudo
