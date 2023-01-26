@@ -67,8 +67,8 @@ jobs:
           name: Install dependencies
           command: |
             # install the dependencies needed for your playbook
-            apk add python3
-            apk add ansible 
+            #apk add python3
+            apk add --upgrade ansible 
             # python -m pip3 install ansible
       - run:
           name: Configure server
