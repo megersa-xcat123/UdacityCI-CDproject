@@ -36,7 +36,7 @@
     state: directory
 - name: "copy file from files/index to ~/web/index.js"
   copy:
-    src: "roles/files/index.js"
+    src: "roles/setup/files/index.js"
     dest: "~/web/index.js"
     
 - name: "executing node"
