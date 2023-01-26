@@ -58,7 +58,7 @@ jobs:
      # - destroy_environment
   configure_infrastructure: 
     docker:
-      - image: cimg/python:3.10 # python:3.7-alpine3.11
+      - image: python:3.7-alpine3.11
     steps:
       - checkout
       - add_ssh_keys:
@@ -67,8 +67,9 @@ jobs:
           name: Install dependencies
           command: |
             # install the dependencies needed for your playbook
-            # apk add --update ansible 
-            python -m pip3 install ansible
+            apk add python3
+            apk add  ansible 
+            # python -m pip3 install ansible
       - run:
           name: Configure server
           command: |
