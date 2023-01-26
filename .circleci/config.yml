@@ -40,24 +40,27 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World!"
-  create_infrastucture:
+  create_infrastructure: 
     docker:
       - image: amazon/aws-cli
     steps:
       - checkout
       - run:
-          name: create cloud formation stack
-          command: | 
+          name: Create Cloudformation Stack
+          command: |
             aws cloudformation deploy \
               --template-file template.yml \
               --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
-              -- region us-east-1
-       - destroy_environment
+              --region us-east-1
+      # Fail the job intentionally to simulate an error.
+      # Uncomment the line below if you want to fail the current step
+      # - run: return 1
+      - destroy_environment
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   myworkflow:
     jobs:
       - myjob1
-      - create_infrastucture
+      - create_infrastructure
      
