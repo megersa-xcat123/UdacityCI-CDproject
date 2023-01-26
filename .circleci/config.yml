@@ -70,7 +70,7 @@ jobs:
            # python - m pip install – upgrade pip
             #pip install - upgrade wheel
            # pip install - upgrade setuptools
-             pip3 install ansible
+             python pip3 install ansible
             # apk add --update ansible 
       - run:
           name: Configure server
